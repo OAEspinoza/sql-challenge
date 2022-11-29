@@ -8,8 +8,8 @@ SELECT
 	employees.first_name, 
 	employees.sex, 
 	salaries.salary
-FROM employees --o
-INNER JOIN salaries --i
+FROM employees 
+INNER JOIN salaries
 ON employees.emp_no = salaries.emp_no;
 
 --2. List first name, last name, and hire date for employees who were hired in 1986.
@@ -88,6 +88,7 @@ WHERE dept_name='Sales' OR dept_name='Development';
 --8. List the frequency count of employee last names (i.e., how many employees share each last name) in descending order.
 
 SELECT last_name, COUNT(last_name)
+-- INTO "Q8_Last_Name_Count" This line would generate a file as output from this query.
 FROM employees
 GROUP BY last_name 
-ORDER BY last_name DESC;
+ORDER BY COUNT(last_name) DESC;
